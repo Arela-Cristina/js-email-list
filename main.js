@@ -50,8 +50,8 @@ function generateMail() {
 let mail //dichiaro una varibile
 const fetchButton = document.getElementById('fetchButton'); //bottone DOM
 
-generateMail()
+generateMail() //invochiamo la funzione che genera mail
 
 
-fetchButton.addEventListener('click', generateMail)
+fetchButton.addEventListener('click', generateMail) //al click di un bottone svuotiamo e ci facciamo dare altri 10 mail
 
