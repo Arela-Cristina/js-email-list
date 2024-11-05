@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+* {
+    font-family: "Playwrite GB S", cursive;
+}
+
+h2 {
+    text-align: center;
+}
+
+ul {
+    background-color: pink;
+    width: 20rem;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    line-height: 3rem;
+    height: 30rem;
+}
+
+button {
+    display: block;
+    padding: 0.5rem 1rem;
+    width: 5rem;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+}
