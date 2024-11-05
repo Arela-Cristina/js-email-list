@@ -26,8 +26,30 @@ function createLi(element, clase = '', idUl) {
     return li; //return li
 }
 
+//function per generare altri 10 mail
+function generateMail() {
+
+    const list = document.getElementById('list');//lista DOM
+    list.innerHTML = ''; //svuotiamo i 10 campi
+
+    for (let i = 0; i < 10; i++) { // 10 itterazioni
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail') //chiamata HTTP => API
+
+            .catch(error => { //controlliamo errori
+                console.log('error')
+            })
+
+            .then(res => {
+                console.log(res.data.response) //debug
+                mail = res.data.response //stampiamo le  mails
+                createLi(mail, '', 'list') // invochiamo la funzione, passiamo le mail e il UL = 'list'
+            })
+    }
+}
 
 let mail //dichiaro una varibile
+const fetchButton = document.getElementById('fetchButton'); //bottone DOM
+
 
 for (let i = 0; i < 10; i++) { // 10 itterazioni
     axios.get('https://flynn.boolean.careers/exercises/api/random/mail') //chiamata HTTP => API
@@ -41,8 +63,8 @@ for (let i = 0; i < 10; i++) { // 10 itterazioni
             mail = res.data.response //stampiamo le  mails
             createLi(mail, '', 'list') // invochiamo la funzione, passiamo le mail e il UL = 'list'
         })
-
-
 }
 
+
+fetchButton.addEventListener('click', generateMail)
 
