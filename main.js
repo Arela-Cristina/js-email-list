@@ -50,20 +50,7 @@ function generateMail() {
 let mail //dichiaro una varibile
 const fetchButton = document.getElementById('fetchButton'); //bottone DOM
 
-
-for (let i = 0; i < 10; i++) { // 10 itterazioni
-    axios.get('https://flynn.boolean.careers/exercises/api/random/mail') //chiamata HTTP => API
-
-        .catch(error => { //controlliamo errori
-            console.log('error')
-        })
-
-        .then(res => {
-            console.log(res.data.response) //debug
-            mail = res.data.response //stampiamo le  mails
-            createLi(mail, '', 'list') // invochiamo la funzione, passiamo le mail e il UL = 'list'
-        })
-}
+generateMail()
 
 
 fetchButton.addEventListener('click', generateMail)
