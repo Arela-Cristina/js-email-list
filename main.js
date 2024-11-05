@@ -6,15 +6,15 @@
 // Buon Lavoro
 
 function createLi(element, clase = '', idUl) {
-    
-    const li = document.createElement("li"); //create elemento li
+
+    const li = document.createElement('li'); //create elemento li
 
     li.textContent = element; //aggiungiammo ogni elemento per ogni li
-  
+
     if (clase) {
         li.classList.add(clase); //se ce una classe aggiungiamo
     }
- 
+
     const lista = document.getElementById(idUl); //prendiamo il nostro container UL
     if (lista) {
         lista.appendChild(li); //appendiamo tutti li
@@ -40,8 +40,9 @@ for (let i = 0; i < 10; i++) { // 10 itterazioni
         .then(res => {
             console.log(res.data.response) //debug
             mail = res.data.response //stampiamo le  mails
-
+            createLi(mail, '', 'list')
         })
+
 
 }
 
