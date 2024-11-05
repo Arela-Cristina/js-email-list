@@ -5,6 +5,7 @@
 // Inserire un bottone che al click faccia il fetch di altre 10 mail (sostituendo le altre)
 // Buon Lavoro
 
+//function per creare elementi li ed appendergli al conenitore ul
 function createLi(element, clase = '', idUl) {
 
     const li = document.createElement('li'); //create elemento li
@@ -26,9 +27,7 @@ function createLi(element, clase = '', idUl) {
 }
 
 
-
-
-let mail
+let mail //dichiaro una varibile
 
 for (let i = 0; i < 10; i++) { // 10 itterazioni
     axios.get('https://flynn.boolean.careers/exercises/api/random/mail') //chiamata HTTP => API
@@ -40,7 +39,7 @@ for (let i = 0; i < 10; i++) { // 10 itterazioni
         .then(res => {
             console.log(res.data.response) //debug
             mail = res.data.response //stampiamo le  mails
-            createLi(mail, '', 'list')
+            createLi(mail, '', 'list') // invochiamo la funzione, passiamo le mail e il UL = 'list'
         })
 
 
